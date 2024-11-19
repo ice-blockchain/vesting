@@ -352,9 +352,9 @@
     /** @type {string} */
     const TONCENTER_API_KEY = IS_TESTNET ? 'd843619b379084d133f061606beecbf72ae2bf60e0622e808f2a3f631673599b' : 'd843619b379084d133f061606beecbf72ae2bf60e0622e808f2a3f631673599b';
     /** @type {string} */
-    const TONCENTER_URL = IS_TESTNET ? 'https://testnet.23.29.127.151:83/jsonRPC' : 'https://23.29.127.151:83/jsonRPC';
+    const TONCENTER_URL = IS_TESTNET ? 'https://testnet.23.29.127.151:83/jsonRPC' : 'http://23.29.127.151:83/jsonRPC';
     /** @type {string} */
-    const TONCENTER_INDEX_URL = IS_TESTNET ? 'https://testnet.toncenter.com/api/v3/' : 'https://toncenter.com/api/v3/';
+    const TONCENTER_INDEX_URL = IS_TESTNET ? 'https://testnet.toncenter.com/api/v3/' : 'http://94.100.16.19/api/v3/';
     /** @type {TonWeb} */
     const tonweb = new TonWeb(new TonWeb.HttpProvider(TONCENTER_URL, {apiKey: TONCENTER_API_KEY}));
 
