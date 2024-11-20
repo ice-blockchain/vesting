@@ -356,7 +356,7 @@
     /** @type {string} */
     const TONCENTER_INDEX_URL = IS_TESTNET ? 'https://testnet.toncenter.com/api/v3/' : 'http://94.100.16.19/api/v3/';
     /** @type {TonWeb} */
-    const tonweb = new TonWeb(new TonWeb.HttpProvider(TONCENTER_URL, {apiKey: TONCENTER_API_KEY}));
+    const tonweb = new TonWeb(new TonWeb.HttpProvider(TONCENTER_URL, {apiKey: ''}));
 
     // STAKING COMMON
 
