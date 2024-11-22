@@ -148,15 +148,6 @@ checkSmartContract(tonweb, address).then(result => {
 
 ### Project Structure
 
-- **`./commit.sh`**
-
-  A script to configure Git user details:
-
-  ```bash
-  git config --global user.name "Andrew"
-  git config --global user.email "andrew@leftclick.io"
-  ```
-
 - **`./package.json`**
 
   Contains project metadata and dependencies:
