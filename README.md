@@ -32,6 +32,8 @@ This project is a fork of the original Vesting Frontend, modified to integrate w
 
 ## Integration with Third-Party Contracts and APIs
 
+![./component.png](./components.png)
+
 ### Vesting Smart Contracts
 
 The Vesting Frontend interacts with specific versions of vesting smart contracts deployed on the ION network. The contracts' codes and code hashes are detailed in the [CONTRACT-VERSIONS.txt](./CONTRACT-VERSIONS.txt) file.

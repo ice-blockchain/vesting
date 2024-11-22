@@ -1,0 +1,41 @@
+digraph VestingFrontendComponents {
+    rankdir=LR;
+    node [shape=box];
+
+    subgraph cluster_user {
+        label="User Device";
+        style=filled;
+        color=lightgrey;
+
+        User [label="User", shape=ellipse];
+        Browser [label="Web Browser"];
+        VestingFrontend [label="Vesting Frontend Webpage\n(HTML/JS/CSS)"];
+        CheckSmartContractJS [label="check-smart-contract.js"];
+        TONWebLib [label="TON Web Library\n(JavaScript Library)"];
+
+        User -> Browser [label="Interacts with"];
+        Browser -> VestingFrontend [label="Loads and runs"];
+        VestingFrontend -> CheckSmartContractJS [label="Uses"];
+        VestingFrontend -> TONWebLib [label="Uses"];
+        CheckSmartContractJS -> TONWebLib [label="Uses"];
+        VestingFrontend -> Browser [label="Updates UI"];
+    }
+
+    subgraph cluster_network {
+        label="Network / Blockchain";
+        style=filled;
+        color=lightblue;
+
+        TONProviderAPI [label="TON Provider API\n(https://ion.toncenter.com/api/v2/jsonRPC)"];
+        IONNetwork [label="ION Network\n(Blockchain)"];
+        SmartContracts [label="Smart Contracts\n(Vesting Contracts)"];
+
+        TONProviderAPI -> IONNetwork [label="Communicates with"];
+        IONNetwork -> SmartContracts [label="Executes"];
+        IONNetwork -> TONProviderAPI [label="Returns Data"];
+    }
+
+    TONWebLib -> TONProviderAPI [label="HTTP Requests"];
+    TONProviderAPI -> TONWebLib [label="HTTP Responses"];
+}
+
