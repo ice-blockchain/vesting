@@ -109,7 +109,7 @@ checkSmartContract(tonweb, address).then(result => {
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/vesting-frontend.git
+   git clone https://github.com/ice-blockchain/vesting-frontend.git
    cd vesting-frontend
    ```
 
