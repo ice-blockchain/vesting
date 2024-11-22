@@ -349,14 +349,9 @@
     const BN = TonWeb.utils.BN;
     const fromNano = TonWeb.utils.fromNano;
     const toNano = TonWeb.utils.toNano;
-    /** @type {string} */
-    const TONCENTER_API_KEY = IS_TESTNET ? 'd843619b379084d133f061606beecbf72ae2bf60e0622e808f2a3f631673599b' : 'd843619b379084d133f061606beecbf72ae2bf60e0622e808f2a3f631673599b';
-    /** @type {string} */
-    const TONCENTER_URL = IS_TESTNET ? 'https://testnet.toncenter.com/api/v2/jsonRPC' : 'https://toncenter.com/api/v2/jsonRPC';
-    /** @type {string} */
-    const TONCENTER_INDEX_URL = IS_TESTNET ? 'https://testnet.toncenter.com/api/v3/' : 'https://toncenter.com/api/v3/';
-    /** @type {TonWeb} */
-    const tonweb = new TonWeb(new TonWeb.HttpProvider(TONCENTER_URL, {apiKey: TONCENTER_API_KEY}));
+    const TONCENTER_URL = 'https://http-api.testnet.ice.io/jsonRPC';
+    const TONCENTER_INDEX_URL = 'https://index-api.testnet.ice.io/';
+    const tonweb = new TonWeb(new TonWeb.HttpProvider(TONCENTER_URL));
 
     // STAKING COMMON
 
@@ -709,8 +704,7 @@
                         const walletInfoRaw = await fetch(TONCENTER_INDEX_URL + 'wallet?address=' + address, {
                             method: 'GET',
                             headers: {
-                                'Content-Type': 'application/json',
-                                'X-API-Key': TONCENTER_API_KEY
+                                'Content-Type': 'application/json'
                             },
                         });
                         const walletInfo = await walletInfoRaw.json();
