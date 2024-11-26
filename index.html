@@ -1442,15 +1442,19 @@ ${isOwner ? `<div class="badge panel-badge badge-blue">You are owner</div>` : ``
         if (createState.info) {
             const vestingWallet = getVestingInstance();
             const vestingWalletAddress = await vestingWallet.getAddress();
-            const stakingJettonWalletAddress = await getStakingJettonWalletAddress(vestingWalletAddress.toString(true, true, true, IS_TESTNET));
-            const stakingJettonWalletAddressSting = stakingJettonWalletAddress.toString(true, true, true, IS_TESTNET);
+            try {
+                const stakingJettonWalletAddress = await getStakingJettonWalletAddress(vestingWalletAddress.toString(true, true, true, IS_TESTNET));
+                const stakingJettonWalletAddressSting = stakingJettonWalletAddress.toString(true, true, true, IS_TESTNET);
 
-            if (createState.whitelistAddresses.includes(createState.stakingJettonWalletAddress)) {
-                createState.whitelistAddresses = createState.whitelistAddresses.map(address => address === createState.stakingJettonWalletAddress ? stakingJettonWalletAddressSting : address);
-                createState.stakingJettonWalletAddress = stakingJettonWalletAddressSting;
-                renderCreateWhitelist();
-            } else {
-                createState.stakingJettonWalletAddress = stakingJettonWalletAddressSting;
+                if (createState.whitelistAddresses.includes(createState.stakingJettonWalletAddress)) {
+                    createState.whitelistAddresses = createState.whitelistAddresses.map(address => address === createState.stakingJettonWalletAddress ? stakingJettonWalletAddressSting : address);
+                    createState.stakingJettonWalletAddress = stakingJettonWalletAddressSting;
+                    renderCreateWhitelist();
+                } else {
+                    createState.stakingJettonWalletAddress = stakingJettonWalletAddressSting;
+                }
+            } catch (error) {
+                console.log(error);
             }
         }
     }
